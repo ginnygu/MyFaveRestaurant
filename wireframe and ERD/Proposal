@@ -1,0 +1,24 @@
+# MyFaveRestaurant
+
+## User Story
+Chris likes to eat at restaurants
+
+## Necessary features
+1. Chris loves to try restaurants recommended by others.
+2. Chris loves to recommend restaurants to others.
+3. Wants to like and dislike the restaurants.
+4. Likes the idea of filtering based on cuisine and price point.
+
+## Advanced features
+
+1. Ability to add pictures.
+2. Let others comment on the restaurant.
+3. Added security and email notifications.
+
+## Wireframe
+
+![alt text](https://github.com/ginnygu/MyFaveRestaurant/blob/master/wireframe%20and%20ERD/IMG_6122.JPG)
+![alt text](https://github.com/ginnygu/MyFaveRestaurant/blob/master/wireframe%20and%20ERD/IMG_6120.JPG)
+![alt text](https://github.com/ginnygu/MyFaveRestaurant/blob/master/wireframe%20and%20ERD/IMG_6123.JPG)
+![alt text](https://github.com/ginnygu/MyFaveRestaurant/blob/master/wireframe%20and%20ERD/IMG_6124.JPG)
+![alt text](https://github.com/ginnygu/MyFaveRestaurant/blob/master/wireframe%20and%20ERD/IMG_6125.JPG)
