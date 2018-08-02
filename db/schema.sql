@@ -20,6 +20,7 @@ CREATE TABLE restaurants (
                 id SERIAL PRIMARY KEY,
               name VARCHAR(255) NOT NULL,
        price_point INT,
+         addresses text NOT NULL,
            user_id INT REFERENCES users(id) ON DELETE CASCADE,
       date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );
