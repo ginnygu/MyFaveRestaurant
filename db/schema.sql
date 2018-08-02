@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS res_cat;
+DROP TABLE IF EXISTS restaurants;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS categories;
