@@ -18,22 +18,22 @@ CREATE INDEX ON users (username);
 
 CREATE TABLE restaurants (
                 id SERIAL PRIMARY KEY,
-              name VARCHAR(255) NOT NULL,
+          res_name VARCHAR(255) NOT NULL,
        price_point INT,
          addresses text NOT NULL,
            user_id INT REFERENCES users(id) ON DELETE CASCADE,
       date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX ON restaurants (name);
+CREATE INDEX ON restaurants (res_name);
 CREATE INDEX ON restaurants (price_point);
 
 CREATE TABLE categories (
                 id SERIAL PRIMARY KEY,
-              name VARCHAR(255) UNIQUE NOT NULL
+          cat_name VARCHAR(255) UNIQUE NOT NULL
 );
 
-CREATE INDEX ON categories (name);
+CREATE INDEX ON categories (cat_name);
 
 CREATE TABLE res_cat (
                 id SERIAL PRIMARY KEY,

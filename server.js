@@ -7,7 +7,7 @@ const passport = require('body-parser');
 const path = require('path');
 
 // set up the routers
-const resRouter = require('./routes/restaurantRoutes');
+const restRouter = require('./routes/restaurantRoutes');
 const authRouter = require('./routes/auth');
 
 
@@ -22,6 +22,7 @@ app.use(logger('dev'));
 
 //set up ejs
 app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname, 'views'));
 
 //using body-parser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -32,7 +33,7 @@ app.use(bodyParser.json());
 // app.use(passport.session());
 
 //creating routes
-// app.use('/restaurants', resRouter);
+app.use('/restaurants', restRouter);
 // app.use('/auth', authRouter);
 
 //create a welcome page

@@ -9,14 +9,14 @@ VALUES
 ('ginnygu', 'password'),
 ('blizabethbun', 'password');
 
-INSERT INTO restaurants (name, price_point, addresses, user_id)
+INSERT INTO restaurants (res_name, price_point, addresses, user_id)
 VALUES
 ('Tara Japanese cuisine', '3' , '25109 Northern Blvd, Little Neck, NY 11362', '1'),
 ('The Boil', '2', '139 Chrystie St, New York, NY 10002', '2'),
 ('Joju', '1', '83-25 Broadway, Elmhurst, NY 11373', '1');
 
 
-INSERT INTO categories (name)
+INSERT INTO categories (cat_name)
 VALUES
 ('Japanese'),
 ('Chinese'),
