@@ -1,0 +1,38 @@
+<form action="/restaurants" method="post" >
+<h2>New Favorite Restaurant</h2>
+<label for="name">Restaurant Name:</label>
+<input type="text" name="res_name" id="restaurants">
+<label for="pricepoint">Price Point:</label>
+<select class="pricepoint" data-style="btn-info" name="price_point">
+    <optgroup label="Select Price Point">
+        <option name="$" value="1">$</option>
+        <option name="$$" value="2">$$</option>
+        <option name="$$$" value="3">$$$</option>
+        <option name="$$$$" value="4">$$$$</option>
+    </optgroup>
+</select>
+<label for="address">Address:</label>
+<input type="text" name="addresses" id="address">
+<label for="categories">Category:</label>
+    <select name="cat_id" data-style="btn-info" id="categoryU">
+        <optgroup label= "Select Category">
+            <option value="1">Japanese</option>
+            <option value="2">Chinese</option>
+            <option value="3">Italian</option>
+            <option value="4">Korean</option>
+            <option value="5">French</option>
+            <option value="6">American</option>
+            <option value="7">Greek</option>
+            <option value="8">Fusion</option>
+            <option value="9">Vietnamese</option>
+            <option value="10">Thai</option>
+            <option value="11">Buffet</option>
+            <option value="12">Kosher</option>
+            <option value="13">Comfort Food</option>
+            <option value="14">Cajun</option>
+            <option value="15">Seafood</option>
+            <option value="16">Vegeterian</option>
+        </optgroup>
+    </select>
+<input type="submit" value="My Favorite Restaurants!">
+</form>

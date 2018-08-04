@@ -7,4 +7,29 @@ module.exports = {
             },
         });
     },
+
+    createRes(req, res){
+        res.format({
+            html() {
+                res.render('restaurants/create');
+            },
+        });
+    },
+
+    pickRest(req, res){
+        res.format({
+            html(){
+                res.render('restaurants/pickone')
+            },
+        });
+    },
+
+    updateRes(req, res){
+        res.format({
+            html(){
+                res.render('restaurants/update', { rest: res.locals.data })
+            }
+        })
+    }
+    
 };

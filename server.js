@@ -2,8 +2,7 @@
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const methodOverride = require('body-parser');
-const passport = require('body-parser');
+const methodOverride = require('method-override');
 const path = require('path');
 
 // set up the routers
@@ -22,15 +21,13 @@ app.use(logger('dev'));
 
 //set up ejs
 app.set('view engine', 'ejs');
-// app.set('views', path.join(__dirname, 'views'));
 
 //using body-parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//using passport
-// app.use(passport.initialize());
-// app.use(passport.session());
+//using method-override to make UPDATE and DELETE work
+app.use(methodOverride('_method'));
 
 //creating routes
 app.use('/restaurants', restRouter);
