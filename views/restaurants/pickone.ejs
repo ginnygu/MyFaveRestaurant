@@ -1,6 +1,22 @@
-
+<%- include('../partials/header') %>
     
-    <p><%= one.id %></p>
-    <p><%= one.res_name %></p>
-    <p><%= one.price_point %></p>
+<div class="res-box">
+    <div class="eachRes">
+        <div class="name_like">
+            <h1 class="res-name"><%= one.res_name %></h1>
+            <a href="/restaurants/<%=one.id%>/edit"><i class="far fa-edit"></i></a>
+        </div>
+    <p> Address: <%= one.addresses%> </p>
+    <p> Price: <% if(one.price_point === 1) { %>
+        <span>$</span>
+        <% }else if( one.price_point === 2){ %>
+        <span>$$</span>
+        <% }else if( one.price_point === 3){ %>
+        <span>$$$</span>
+        <% }else if( one.price_point === 4){ %>
+        <span>$$$$</span>
+        <% } %>
 
+    <p> Category: <%= one.cat_name %></p>
+    </div>
+</div>

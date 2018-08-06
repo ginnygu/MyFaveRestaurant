@@ -1,25 +1,25 @@
 <%- include('../partials/header') %>
 <%- include('../partials/filter') %>
 <div class="res-box">
-<% rest.forEach( (rest) => { %>
+<% finds.forEach( (rest) => { %>
     <div class="eachRes">
         <div class="name_like">
-            <h1 class="res-name"><a href="/restaurants/<%=rest.id%>"><%= rest.res_name %></a></h1>
+            <h1 class="res-name"><a href="/restaurants/<%=rest.id%>"><%= finds.res_name %></a></h1>
             <i class="fa fa-thumbs-up" aria-hidden="true"></i>
             <i class="fas fa-thumbs-down" aria-hidden="true"></i>
         </div>
-    <p> Address: <%= rest.addresses%> </p>
-    <p> Price: <% if(rest.price_point === 1) { %>
+    <p> Address: <%= finds.addresses%> </p>
+    <p> Price: <% if(finds.price_point === 1) { %>
         <span>$</span>
-        <% }else if( rest.price_point === 2){ %>
+        <% }else if( finds.price_point === 2){ %>
         <span>$$</span>
-        <% }else if( rest.price_point === 3){ %>
+        <% }else if( finds.price_point === 3){ %>
         <span>$$$</span>
-        <% }else if( rest.price_point === 4){ %>
+        <% }else if( finds.price_point === 4){ %>
         <span>$$$$</span>
         <% } %>
 
-    <p> Category: <%= rest.cat_name %></p>
+    <p> Category: <%= finds.cat_name %></p>
     </div>
     <% }) %>
 </div>

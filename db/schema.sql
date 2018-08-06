@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS categories;
 CREATE TABLE users (
                  id SERIAL PRIMARY KEY,
            username VARCHAR(255) UNIQUE NOT NULL,
+              email VARCHAR(255) NOT NULL,
     password_digest VARCHAR(255) NOT NULL,
        date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );
@@ -18,9 +19,9 @@ CREATE INDEX ON users (username);
 
 CREATE TABLE restaurants (
                 id SERIAL PRIMARY KEY,
-          res_name VARCHAR(255) NOT NULL,
+          res_name VARCHAR(255),
        price_point INT,
-         addresses text NOT NULL,
+         addresses text,
            user_id INT REFERENCES users(id) ON DELETE CASCADE,
       date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );

@@ -29,13 +29,16 @@ app.use(bodyParser.json());
 //using method-override to make UPDATE and DELETE work
 app.use(methodOverride('_method'));
 
+//use path for styling purpose
+app.use(express.static(__dirname + '/public'));
+
 //creating routes
 app.use('/restaurants', restRouter);
-// app.use('/auth', authRouter);
+
 
 //create a welcome page
 app.get('/', (req, res) => {
-    res.send(`Welcome to My Favorite Restaurant`);
+    res.render('restaurants/home');
 });
 
 //using nodemon and begin the server

@@ -11,14 +11,28 @@ module.exports = {
         .catch(e => next(e));
 
     },
+
+    allByCat(req, res, next) {
+        db.findByCat()
+        .then((find) => {
+            res.locals.find = find;
+            next();
+        })
+        .catch(e => next(e));
+    },
     
-    // create(req, res, next) {
-    //     db.createRes({...req.body, user_id: 1})
-    //     .then((creating) => {
-    //         res.redirect('/restaurants');
-    //     })
-    //     .catch(e => next(e));
-    // },
+    create(req, res, next) {
+        const catId = req.body;
+        db.createRes(catId)
+        .then((creating) => {
+            comDB.createRest(creating.id, catId.cat_id)
+            .then(() => {
+            res.redirect('/restaurants')
+            })
+            .catch(e => next(e));
+        })
+        .catch(e => next(e));
+    },
 
     pickOne(req, res, next) {
         db.oneRes(req.params.id)
@@ -34,10 +48,9 @@ module.exports = {
         const datas = req.body
         db.updateRes(id, datas)
         .then((update) => {
-            debugger;
-            comDB.updateCat(update.id, datas)
-            .then(() =>
-            res.redirecting('/restaurants/:id'))
+            comDB.updateCat(update.id, datas.cat_id)
+            .then(() => {
+            res.redirect('/restaurants')})
             .catch(e => next(e));
         })
         .catch(e => next(e));
@@ -45,5 +58,9 @@ module.exports = {
 
     deleteRest(req, res, next) {
         db.deleteRes(req.params.id)
+        .then(() => {
+            res.redirect('/restaurants')
+        })
+        .catch(e => next(e));
     }
 };

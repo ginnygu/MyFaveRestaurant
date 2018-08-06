@@ -30,6 +30,14 @@ module.exports = {
                 res.render('restaurants/update', { rest: res.locals.data })
             }
         })
+    },
+
+    findFromCat(req, res){
+        res.format({
+            html(){
+                res.render('restaurants/filterbycat', { finds: res.locals.finds })
+            }
+        })
     }
     
 };

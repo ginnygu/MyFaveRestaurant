@@ -1,3 +1,4 @@
+<%- include('../partials/header') %>
 <form action="/restaurants" method="post" >
 <h2>New Favorite Restaurant</h2>
 <label for="name">Restaurant Name:</label>
@@ -5,10 +6,10 @@
 <label for="pricepoint">Price Point:</label>
 <select class="pricepoint" data-style="btn-info" name="price_point">
     <optgroup label="Select Price Point">
-        <option name="$" value="1">$</option>
-        <option name="$$" value="2">$$</option>
-        <option name="$$$" value="3">$$$</option>
-        <option name="$$$$" value="4">$$$$</option>
+        <option name="price_point" value="1">$</option>
+        <option name="price_point" value="2">$$</option>
+        <option name="price_point" value="3">$$$</option>
+        <option name="price_point" value="4">$$$$</option>
     </optgroup>
 </select>
 <label for="address">Address:</label>
@@ -16,22 +17,22 @@
 <label for="categories">Category:</label>
     <select name="cat_id" data-style="btn-info" id="categoryU">
         <optgroup label= "Select Category">
-            <option value="1">Japanese</option>
-            <option value="2">Chinese</option>
-            <option value="3">Italian</option>
-            <option value="4">Korean</option>
-            <option value="5">French</option>
-            <option value="6">American</option>
-            <option value="7">Greek</option>
-            <option value="8">Fusion</option>
-            <option value="9">Vietnamese</option>
-            <option value="10">Thai</option>
-            <option value="11">Buffet</option>
-            <option value="12">Kosher</option>
-            <option value="13">Comfort Food</option>
-            <option value="14">Cajun</option>
-            <option value="15">Seafood</option>
-            <option value="16">Vegeterian</option>
+            <option name="cat_id" value="1">Japanese</option>
+            <option name="cat_id" value="2">Chinese</option>
+            <option name="cat_id" value="3">Italian</option>
+            <option name="cat_id" value="4">Korean</option>
+            <option name="cat_id" value="5">French</option>
+            <option name="cat_id" value="6">American</option>
+            <option name="cat_id" value="7">Greek</option>
+            <option name="cat_id" value="8">Fusion</option>
+            <option name="cat_id" value="9">Vietnamese</option>
+            <option name="cat_id" value="10">Thai</option>
+            <option name="cat_id" value="11">Buffet</option>
+            <option name="cat_id" value="12">Kosher</option>
+            <option name="cat_id" value="13">Comfort Food</option>
+            <option name="cat_id" value="14">Cajun</option>
+            <option name="cat_id" value="15">Seafood</option>
+            <option name="cat_id" value="16">Vegeterian</option>
         </optgroup>
     </select>
 <input type="submit" value="My Favorite Restaurants!">

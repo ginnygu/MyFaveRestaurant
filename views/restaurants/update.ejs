@@ -1,20 +1,22 @@
+<%- include('../partials/header') %>
+
 <form method="POST" action="/restaurants/<%=one.id %>?_method=PUT">
-    <h2>Update Favorite Restaurant</h2>
+    <h1>Update Favorite Restaurant</h1>
     <label for="name">Restaurant Name:</label>
     <input type="text" value="<%=one.res_name%>" name="res_name" id="restaurants">
     <label for="pricepoint">Price Point:</label>
-    <select class="pricepoint" data-style="btn-info" name="price">
+    <select class="pricepoint" data-style="btn-info" name="price_point">
         <optgroup label="Select Price Point">
-            <option name="$" value="<%=one.price_point%>1">$</option>
-            <option name="$$" value="<%=one.price_point%>2">$$</option>
-            <option name="$$$" value="<%=one.price_point%>3">$$$</option>
-            <option name="$$$$" value="<%=one.price_point%>4">$$$$</option>
+            <option name="price_point" value="1">$</option>
+            <option name="price_point" value="2">$$</option>
+            <option name="price_point" value="3">$$$</option>
+            <option name="price_point" value="4">$$$$</option>
         </optgroup>
     </select>
     <label for="address">Address:</label>
     <input type="text" value="<%=one.addresses%>" name="addresses" id="address" placeholder="<%=one.addresses%>">
     <label for="categories">Category:</label>
-    <select name="cat_name" data-style="btn-info" id="categoryU">
+    <select name="cat_id" data-style="btn-info" id="categoryU">
         <optgroup label= "Select Category">
             <option value="1">Japanese</option>
             <option value="2">Chinese</option>
@@ -37,5 +39,6 @@
     <input type="submit" value="Update the Restaurant!">
     </form>
     <form method="POST" action="/restaurants/<%=one.id%>?_method=DELETE">
-    <input type="submit" name="_method" value="DELETE">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit">Delete Restaurant</button>
     </form>

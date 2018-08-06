@@ -1,0 +1,103 @@
+body {
+    background: url("/images/bg.jpg") fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    align-items: baseline;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: black;
+}
+
+.title {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5em;
+}
+
+.restnav {
+    font-family: 'Comfortaa', cursive; 
+    font-size: .85em;
+}
+.filter-box{
+    border: solid 1px black;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.filter-choice{
+    right: 1em;
+}
+
+h1{
+    font-family: 'Caveat', cursive;
+    padding-right: 2em;    
+}
+
+.res-box{
+    border: solid 1px black;
+    padding: 1em;
+}
+
+.eachRes {
+    border: solid 1px black;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.name_like {
+    display: flex;
+    border-bottom: dotted 1px black;
+    align-items: baseline;
+}
+.res-name {
+    font-family: 'Caveat', cursive;
+    font-size: 2em;
+}
+.res-name a{
+    text-decoration: none;
+    color: black;
+}
+
+.eachRes p {
+    font-family: 'Comfortaa', cursive;
+    font-size: .8em;
+}
+
+i{
+    padding-left: 1em;
+}
+
+.login-table {
+    position: absolute;
+    border: solid 1px black;
+    display: inline-block;
+    left: 40%;
+    top: 40%;
+    padding-bottom: 3em;
+    padding-left: 2em;
+}
+.login-table h1 {
+    text-align: center;
+    margin: 0;
+}
+
+.login-table label{
+    font-family: 'Comfortaa', cursive;
+}
+
+.log {
+    margin-top: 1em;
+}
+.sign-in {
+    position: absolute;
+    left: 40%;
+    margin-top: 5%;
+}

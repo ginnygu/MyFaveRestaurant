@@ -4,6 +4,7 @@ module.exports = {
     allRest() {
         return db.many(`
         SELECT
+        restaurants.id,
         restaurants.res_name,
         restaurants.price_point,
         restaurants.addresses,
@@ -16,8 +17,8 @@ module.exports = {
     },
 
     createRes(data) {
-        db.one(`
-        INSERT INTO restaurants 
+        return db.one(`
+        INSERT INTO restaurants
         (res_name, price_point, addresses)
         VALUES
         ($/res_name/, $/price_point/, $/addresses/) RETURNING *;
@@ -30,9 +31,12 @@ module.exports = {
         restaurants.id,
         restaurants.res_name,
         restaurants.price_point,
-        restaurants.addresses
+        restaurants.addresses,
+        categories.cat_name
         FROM restaurants
-        WHERE id = $1`, ones);
+        LEFT JOIN res_cat ON (res_cat.res_id = restaurants.id)
+        LEFT JOIN categories ON (categories.id = res_cat.cat_id)
+        WHERE restaurants.id = $1`, ones);
     },
 
     updateRes(id, change) {
@@ -44,7 +48,7 @@ module.exports = {
         addresses = $4
         WHERE id = $1
         RETURNING *
-        `, [id, change.res_name, change.price_point, change.addresses])
+        `, [id, change.res_name, change.price_point, change.addresses]);
     },
 
     deleteRes(id) {
@@ -53,6 +57,21 @@ module.exports = {
         WHERE id = $1`, id);
     },
 
+    findByCat(cat, price) {
+        return db.many(`
+        SELECT
+        restaurants.id,
+        restaurants.res_name,
+        restaurants.price_point,
+        restaurants.addresses,
+        categories.cat_name
+        FROM
+        restaurants
+        LEFT JOIN res_cat ON (res_cat.res_id = restaurants.id)
+        LEFT JOIN categories ON (categories.id = res_cat.cat_id)
+        WHERE cat_id = $1 AND restaurants.price_point = $2
+        `, [cat, price])
+    }
 
 }
 
