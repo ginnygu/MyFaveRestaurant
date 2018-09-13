@@ -37,7 +37,7 @@ app.use('/restaurants', restRouter);
 
 //create a welcome page
 app.get('/', (req, res) => {
-    res.render('Hello');
+    res.render('restaurants');
 });
 
 //using nodemon and begin the server
