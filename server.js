@@ -7,7 +7,6 @@ const path = require('path');
 
 // set up the routers
 const restRouter = require('./routes/restaurantRoutes');
-const authRouter = require('./routes/auth');
 
 
 //create a port
@@ -38,7 +37,7 @@ app.use('/restaurants', restRouter);
 
 //create a welcome page
 app.get('/', (req, res) => {
-    res.render('restaurants/home');
+    res.render('/restaurants');
 });
 
 //using nodemon and begin the server
