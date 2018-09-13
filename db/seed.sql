@@ -1,5 +1,3 @@
-\c restaurants_db
-
 DELETE FROM users;
 DELETE FROM restaurants;
 DELETE FROM categories;
